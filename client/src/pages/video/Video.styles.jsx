@@ -46,7 +46,8 @@ margin: 15px 0px;
 border: 0.5px solid ${({ theme }) => theme.soft};
 `
 
-export const Recommendation = styled.div``
+export const Recommendation = styled.div`
+flex: 2;`
 
 export const Channel = styled.div`
 display: flex;

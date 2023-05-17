@@ -5,6 +5,7 @@ width: ${(props) => props.type !== "sm" && "360px"};
 margin-bottom: ${(props) => (props.type === "sm" ? "10px" : "45px")};
 cursor:pointer;
 display: ${(props) => props.type === "sm" && "flex"};
+gap: 20px;
 `
 export const Image = styled.img`
 width: 100%;
