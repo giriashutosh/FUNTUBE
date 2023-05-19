@@ -20,6 +20,8 @@ app.use(express.json())
 app.use("/api/auth", authRoutes);
 app.use("/api/users", userRoutes)
 app.use("/api/videos", videoRoutes)
+
+
 //error handler
 app.use((err, req, res, next) => {
     const status = err.status || 500;

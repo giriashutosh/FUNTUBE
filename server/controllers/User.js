@@ -1,5 +1,6 @@
 import mongoose from "mongoose"
 import User from "../models/User.js"
+import Video from "../models/Video.js";
 import { createError } from "../error.js";
 
 export const update = async (req, res, next) => {
@@ -71,6 +72,34 @@ export const unsubscribe = async (req, res, next) => {
             $inc: {subscribers: -1}
         })
         res.status(200).json("unSubscription successfull!")
+    } catch (err) {
+        next(err)
+    }
+}
+
+export const like = async (req, res, next) => {
+    const id = req.user.id;
+    const videoId = req.params.videoId;
+    try {
+        await Video.findByIdAndUpdate(videoId, {
+            $addToSet: { likes: id },
+            $pull:{dislikes:id}
+        })
+        res.status(200).json("The video has been liked.");
+    } catch (err) {
+        next(err)
+    }
+}
+
+export const dislike = async (req, res, next) => {
+    const id = req.user.id;
+    const videoId = req.params.videoId;
+    try {
+        await Video.findByIdAndUpdate(videoId, {
+            $addToSet: { dislikes: id },
+            $pull:{likes:id}
+        })
+        res.status(200).json("The video has been disliked.");
     } catch (err) {
         next(err)
     }
