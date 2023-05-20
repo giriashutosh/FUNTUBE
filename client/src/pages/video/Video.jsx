@@ -6,6 +6,7 @@ import ReplyOutlinedIcon from "@mui/icons-material/ReplyOutlined";
 import AddTaskOutlinedIcon from "@mui/icons-material/AddTaskOutlined";
 import Comments from '../../components/Comments/Comments';
 import Card from "../../components/card/Card"
+
 const Video = () => {
   return (
     <Container>
@@ -56,7 +57,7 @@ const Video = () => {
         <Hr />
         <Comments/>
       </Content>
-      <Recommendation>
+      {/* <Recommendation>
         <Card type="sm"/>
         <Card type="sm"/>
         <Card type="sm"/>
@@ -71,7 +72,7 @@ const Video = () => {
         <Card type="sm"/>
         <Card type="sm"/>
         
-      </Recommendation>
+      </Recommendation> */}
     </Container>
   )
 }
