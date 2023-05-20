@@ -7,13 +7,14 @@ import axios from 'axios'
 import { format } from 'timeago.js'
 
 const Card = ({ type, video }) => {
-    const [channel, setChannel] = useState([])
+    const [ channel, setChannel ]= useState({})
 
     useEffect(() => {
         const fetchChannel = async () => {
             const res = await axios.get(`/users/find/${video.userId}`)
             console.log(res.data)
             setChannel(res.data)
+            console.log(channel)
         }
         fetchChannel();
     }, [video.userId])
