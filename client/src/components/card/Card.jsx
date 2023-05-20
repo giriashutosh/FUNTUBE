@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { ChannelImage, ChannelName, Container, Details, Image, Info, Texts, Title } from './Card.styles'
-import CourseImage from "../../img/reactcourse.png"
-import ChannelImg from "../../img/channelImg.jpg"
+// import CourseImage from "../../img/reactcourse.png"
+// import ChannelImg from "../../img/channelImg.jpg"
 import { Link } from 'react-router-dom'
 import axios from 'axios'
 import { format } from 'timeago.js'
@@ -15,7 +15,7 @@ const Card = ({ type, video }) => {
             console.log(res.data)
             setChannel(res.data)
         }
-        //fetchChannel();
+        fetchChannel();
     }, [video.userId])
     
     return (
